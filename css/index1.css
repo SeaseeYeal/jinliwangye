@@ -1,0 +1,385 @@
+.center{
+    /* margin:0 auto只对块级元素实现水平居中有效，行内元素无效 */
+    margin: 0 auto;
+    /* width: 1190px; */
+}
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+/*定义一个版心类，哪里需要直接调用*/
+.wrap{
+    width: 1190px;
+    margin: 0 auto;
+}
+.header{
+    background: rgba(238, 192, 165, 0.418);
+    height: 104px;
+    width: 1190px;
+}
+.header-head{
+    height: 33px;
+    background: honeydew;
+    text-align: right;
+    line-height: 33px;
+}
+.header-head .hot{
+    color: brown;
+}
+/* a:hover{
+    color:#EF594B;
+} */
+.header-head a:hover{   /* 这里的权重相当于2斤1克 */
+    color:#EF594B;
+}
+.header-head a{     /* 这里的权重相当于1斤1克 */
+    color:#A29F9F;
+}
+.cart-link{
+    margin: 10px;
+}
+.header-head .line{
+    margin-left: 10px;
+    margin-right: 10px;
+    color:#E3DDE3;
+}
+
+.header-body .logo{
+    background: rgba(230, 193, 188, 0.466);
+    width: 200px;
+    height: 42px;
+}
+.header-body .nav{
+    /* background: rgba(196, 224, 149, 0.849); */
+    width: 678px;
+    height: 16px;
+    margin-left: 135px;
+    margin-top:28px;
+}
+.header-body .nav a{
+    /* 把字号设置成16 */
+    font-size: 16px;
+    /* 把默认行高设置为1 */
+    line-height: 1;
+    /* 很多时候用margin的地方其实也可以用padding代替 */
+    padding-left: 25px;
+    padding-right: 25px;
+    /* border: 1px solid #000; */
+}
+.header-body .nav li{
+    float: left;
+}
+.header-body .search{
+    background: #fff;
+    width: 168px;
+    height: 28px;
+    border:1px solid #DDDDDD;
+    margin-top: 20px;
+}
+.header-body .search-txt{
+    /* 去除搜索框的默认边框 */
+    border: 0 none;
+    width: 138px;
+    margin-top: 7px;
+    margin-left: 5px;
+}
+.header-body .search-btn{
+    border: 0 none;
+    background: #fff url(../img/icon_search.png);
+    width: 16px;
+    height: 16px;
+
+    margin-top: 5px;
+    margin-right: 6px;
+}
+
+.slider{
+    background: rgb(195, 214, 156);
+    height: 640px;
+    width: 100%;
+    text-align: center;  /*同样适用于图片，使其居中*/
+}
+.slider .img{
+    display: block;
+    margin: 0 auto;
+}
+/* 明星产品 star-product 450px * 1190px */
+.star-product{
+    background: aliceblue;
+    height: 450px;
+    width: 1190px;
+}
+.title{
+    background: #EF594B;
+    height: 125px;
+    /* 文字大小，水平、垂直居中的控制 */
+    font-size: 30px;
+    text-align: center;
+    line-height: 125px;
+}
+/* li是块级标签，默认独占一行 */
+.star-product-list li{
+/* display: inline;    这种方式盒子之间会有空隙，通常不可控制 */
+float: left;
+margin-right: 10px;
+}
+.nomarginright{
+    margin-right: 0 !important;
+}
+/* 主体分区 container 1812px * 100% */
+.container{
+    background: rgb(195, 214, 156);
+    height: 1812px;
+    width: 100%;
+}
+.container-in{
+    width: 1190px;
+}
+.title{
+    position: relative;
+}
+.title .more{
+    font-size: 14px;  /*控制文字大小*/
+    line-height: 1;  /*行高*/
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+.hot-product{
+background: salmon;
+height: 785px;
+}
+.hot-product-left{
+    background: honeydew;
+    width: 305px;
+    height: 100%;
+}
+.hot-product-right{
+    background: rgb(230, 214, 175);
+    width: 885px;
+    height: 100%;
+}
+.hot-product-right li{
+    background: #fff;
+    width: 290px;
+    height: 390px;
+
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.hot-product-right li .product-pic{
+    height: 280px;
+    position: relative;
+}
+.hot-product-right li .product-pic img{
+    width: 114px;
+    height: 240px;
+    margin-top: 22px;
+    position: absolute;
+    top: 0;
+    left: 90px;
+    transition: all 0.5s;/* 过度属性：图片移动产生过渡动画 */
+}
+.hot-product-right li .product-pic .front{
+    z-index: 2;
+}
+.hot-product-right li .product-pic .back{
+    z-index: 1;
+}
+/* 做特效：
+    鼠标移上 li里面的两张图片一左一右移动    
+*/
+.hot-product-right li:hover .back{
+    margin-left: -35px;
+}
+.hot-product-right li:hover .front{
+    margin-left: 40px;
+}
+.hot-product-right li .product-name,
+.quality-name{
+    height: 28px;
+    font-size: 16px;
+}
+.hot-product-right li .product-desc,
+.quality-desc{
+    height: 30px;
+    font-size: 14px;
+    color: rgb(253, 191, 110);
+}
+.hot-product-right li .product-price,
+.quality-price{
+    font-size: 20px;
+    color: rgb(247, 125, 81);
+}
+.hot-product-right li .product-price span{
+    font-size: 15px;
+}
+.quality-product ul{
+    width: 1200px;
+}
+.quality-product li{
+    text-align: center;
+
+    background: rgb(250, 247, 247);
+    width: 386px;
+    height: 343px;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 16px;
+}
+.quality-product li,
+.hot-product-left{
+    transition: all 0.4s;
+}
+.quality-product li:hover,
+.hot-product-left :hover{
+    /* background: #EF594B; */
+    /*盒子投影：水平偏移 垂直偏移 投影大小 投影颜色  */
+    box-shadow: 0px 10px 20px #000;
+    /* margin-top: -2px;影响布局，所以弃用 */
+    position: relative;/*相对于自己定位,只会移动自身，不影响其他盒子*/
+    top:-2px;
+}
+.quality-product li  img{
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+.quality-product  .quality-desc{
+    height: 28px;
+}
+.quality-product  .quality-price{
+    color: #EF594B;
+}
+.quality-product li .quality-price span{
+    font-size: 15px;
+}
+/* 品牌分区 brand 956px * 1190px */
+.brand{
+    background: rgb(148, 180, 175);
+    height: 665px;
+    width: 1190px;
+}
+.brand-video{
+    height: 377px;
+}
+.brand-video li{
+    float: left;
+    margin-right: 16px;
+}
+.service{
+    background: rgb(240, 241, 162);
+    height: 45px;
+    margin-top: 76px;
+}
+.service li{
+    float: left;
+    /* background: #A29F9F; */
+    width: 25%;
+    height: 100%;
+}
+.service li img{
+    float: left;
+    margin-left: 4px;
+    margin-right: 10px;
+}
+.service li span{
+    color: rgb(190, 179, 179);
+    font-size: 16px;
+}
+.site-link{
+    height: 390px;
+    /* 底部一个像素框，而不是四个像素框 */
+    border-top: 1px solid rgb(19, 18, 18);
+}
+.site-link-in{
+width: 1190px;
+}
+.site-link ul{
+float: left;
+/* border:1px solid rgb ; */
+width:215px ;
+margin-top: 40px;
+}
+.site-link li{
+height: 33px;
+}
+.site-link a{
+    color: #A29F9F;
+}
+.site-link .site-link-title a{
+font-size: 15px;
+color: rgb(226, 135, 107);
+}
+.qr-code{
+    background: rgb(142, 165, 156);
+    width: 106px;
+    height: 138px;
+    /* float: left; */
+    margin-top: 40px;
+}
+.qr-code img{
+    border: 3px solid rgb(201, 193, 192);
+}
+.qr-code .qr-code-text{
+    color: rgb(241, 213, 159);
+    text-align: center;
+} 
+/* 页脚分区 footer 158px * 100% */
+.footer{
+    background: rgb(59, 59, 59);
+    height: 158px;
+    width: 100%;
+}
+.footer-in{
+    background: gold;
+    width: 1190px;
+    margin: 0 auto;
+}
+.footer-left{
+    width: 650px;
+    height: 100%;
+    /* background: #EF594B; */
+    color: beige;
+}
+.footer-center{
+    width: 270px;
+    height: 42px;
+    /* background: rgb(228, 210, 132); */
+    margin-top: 54px;
+}
+.footer-right{
+    width: 102px;
+    height: 24%;
+    background: rgb(132, 163, 137);
+    margin-top: 50px;
+    margin-right: 10px;
+}
+/* 方法一 */
+.footer-left .footer-left-head,
+.footer-left .footer-left-body,
+.footer-left .footer-left-foot{
+    height: 45px;
+}
+/* 方法二 */
+/* .footer-left .item{
+    height: 45px;
+}   哪里需要哪里调用*/
+.footer-center img{
+    float: left;
+    margin-right: 15px;
+}
+.footer-right{
+    /* background: #EF594B; */
+    width: 102px;
+    height: 24px;
+    margin-top: 50px;
+    margin-right: 10px;
+    color: rgb(231, 216, 216);
+    text-align: center;
+    line-height: 24px;
+    border-radius:15px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript</title>
+    <style>
+    /* 2.web第二大标准css样式代码 */
+    .box{
+        background: gold;
+        width: 300px;
+        height: 300px;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">web第一大标准：HTML标签的div标签</div>
+</body>
+</html>
+<!-- 书写到<script></script>里面会被识别成javaScript代码 -->
+<script>
+    //一、  3、web第三大标准：js负责页面交互
+    //    alert 是js内置功能  警报、警示的功能，浏览器内带的，在不同浏览器里的外观可能不同
+    //    函数名称（）   其中（）用来执行函数
+    //    js中 被一对引号包起来的叫字符串
+    // alert('请输入搜索条件');  
+
+
+    // 二、  变量可以用来存储数据，方便后续的重复调用
+    //     JS定义变量的语法
+    //      var 变量 = 数据
+    // var msg = "天生我才";
+    // alert (msg);
+
+
+    // 三、 JS有内置函数，也允许开发者自己定义函数
+    //     自定义函数语法，分为两部分
+    //  1.函数定义式
+    //     函数仅仅定义了，函数内的代码不会执行（函数不调用不会执行）
+    //     语法： function 函数名称 （）{}
+    //  3.参数：
+    //     实参：真实数据
+    //     形参：形式上的参数，本质是个变量
+    function fn(name) {
+        // + 字符串数据的连接
+        alert(name +'、无非求');
+        alert('碗');
+        alert('热汤');
+        alert('喝');
+    }
+    //  2.函数调用式
+    //   用于执行定义过的函数，如果没有会报错
+    //   语法： 函数名称（）;   括号用于调用，执行函数功能。括号内存放参数。
+    fn('1');
+    fn('2'); //重复执行
+</script>

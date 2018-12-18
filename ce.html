@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品切换效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+
+        .product {
+            width: 400px;
+            height: 480px;
+            border: 2px solid #fde081;
+            margin: 0 auto;
+        }
+
+
+        .product .big-img {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+
+        .product .small-img ul {
+            padding-left: 25px;
+        }
+
+
+        .product .small-img li {
+            float: left;
+            border: 2px solid #b3a4a4;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+
+        .product .small-img .active {
+            border-color: rgb(214, 101, 73);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="product">
+        <div class="big-img">
+            <ul>
+                <li>
+                    <img src="img/ddc01_big.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc02_big.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc03_big.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc04_big.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc05_big.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+        <div class="small-img">
+            <ul>
+                <li class="active">
+                    <img src="img/ddc01.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc02.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc03.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc04.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc05.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+</html>
+<script src="lib/jquery-1.12.2.js"></script>
+<script>
+    // alert();
+    // 需求：鼠标移动到小图，切换到大图
+    // $('.samll-img li')查找到小图
+    // mouseenter(function(){}；添加移入事件
+    $('.small-img li').mouseenter(function () {
+        // alert();
+        // $(this)代表当前鼠标移入的li
+        //   当前的li标签变颜色 ，由 active类决定
+        $(this).addClass('active')
+        $(this).siblings().removeClass('active');
+        var key = $(this).index();
+        //    alert(key);
+        // alert(key);
+        // 按照顺序索引值切换对应大图
+        // $('.big-img li') 先找到大图分区中的li
+        // eq(索引值)
+        $('.big-img li').eq(key).show()
+        $('.big-img li').eq(key).siblings().hide();
+    });
+</script>

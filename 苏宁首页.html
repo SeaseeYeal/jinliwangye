@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>苏宁易购网页关闭效果</title>
+    <style>
+    /* 样式初始化，清楚浏览器 标签多余样式 */
+    /* 我们项目中使用reset.css这个文件实现初始化 */
+    /* 如果文字图片不能靠到浏览器最左边 或者 ul li 结构、文字前有小圆点，而且文字无法靠到最左边
+    
+    */
+    *{   /*选中所有标签把多余*/
+        margin: 0;
+        padding: 0;
+    }
+    ul,li{   /*清除小圆点*/
+        list-style: none;  
+    }
+
+    /* 开始正式书写代码 */
+    .top-ad{
+        background: gold;
+        width: 100%;
+        height: 100%;
+    }
+    .top-ad .ad-img{
+        margin: 0 auto;
+        display: block;
+    }
+    .top-ad .ad-close-btn{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        /* 鼠标移上，鼠标指针变成小手 */
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div class="top-ad">
+        <img class="ad-img" src="img/ad_suning.jpg" alt="">
+        <img class="ad-close-btn" src="img/ad_close_btn.png" alt="">
+    </div>
+</body>
+</html>
+<!-- 1、使用JQuery库实现特效  -->
+<script src="lib/jquery-1.12.2.js"></script>
+<!-- 2、引入成功后书写代码 -->
+<script>
+    // 需求是点击关闭按钮，广告被关闭
+    // 1、找到关闭按钮
+    // 2、添加按钮点击事件
+    // 3、找到广告盒子
+    // 4、隐藏广告盒子
+    // $()jQuery用于查找元素的方法
+    $('.ad-close-btn').click(function(){ //找到按钮并添加点击事件
+        // alert();   //用于测试第一步第二步是否正常
+        $('.top-ad').hide();  //找到盒子并隐藏
+    });   
+</script>

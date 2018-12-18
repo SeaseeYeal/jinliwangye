@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品切换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .product {
+            width: 400px;
+            height: 480px;
+            border: 1px solid rgb(230, 218, 114);
+            margin: 0 auto;
+        }
+
+        .product .big-img {
+            background: rgb(83, 152, 192);
+            width: 400px;
+            height: 400px;
+            /* 溢出隐藏 :超出的部分隐藏*/
+            overflow: hidden;
+        }
+
+        .product .small-img {
+            background: rgb(197, 133, 125);
+
+        }
+
+        /* 选中ul,使小盒子整体右移 */
+
+        .product .small-img ul {
+            padding-left: 25px;
+        }
+
+        .product .small-img li {
+            float: left;
+            margin-right: 10px;
+            border: 2px solid rgb(192, 196, 194);
+            /* 鼠标变成小手 */
+            cursor: pointer;
+        }
+
+        .product .small-img li:hover {
+            border-color: rgb(235, 225, 84);
+        }
+
+        .product .small-img .active {
+            border-color: rgb(235, 159, 151);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product">
+        <div class="big-img">
+            <ul>
+                <li>
+                    <img src="img/ddc01_big.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc02_big.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc03_big.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc04_big.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/ddc05_big.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+        <div class="small-img">
+            <ul>
+                <li class="active">
+                    <a href="#">
+                        <img src="img/ddc01.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ddc02.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ddc03.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ddc04.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ddc05.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 引入jquery -->
+<script src="lib/jquery-1.12.2.js"></script>
+<!-- 准备新的script标签，里面写JS逻辑代码 -->
+<script> 
+// alert();
+    // 需求：鼠标移动到小图，切换到大图
+    // $('.samll-img li')查找到小图
+    // mouseenter(function(){}；添加移入事件
+    $('.samll-img li').mouseenter(function () {
+        // alert();
+        // $(this)代表当前鼠标移入的li
+        //   当前的li标签变颜色 ，由 active类决定
+        $(this).addClass('active') //当前添加类，颜色变化
+        //但是只能是当前的颜色有变化（添加类），其他小盒子兄弟们不能变色（删除类）
+        $(this).siblings().removeClass('active');
+
+        //控制对应的大图切换
+        var key= $(this).index();
+        // alert(key);
+        // 按照顺序索引值切换对应大图
+        // $('.big-img li') 先找到大图分区中的li
+        // eq(索引值)
+        $('.big-img li').eq(key).show()    //此处无分号，代码继续执行查找兄弟
+        // 把兄弟们隐藏
+        $('.big-img li').eq(key).siblings().hide();
+    });
+</script>
